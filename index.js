@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
@@ -11,7 +13,7 @@ app.use(cors());
 
 app.use("/api/posts", postRouter);
 
-const port = 8080;
+const port = process.env.PORT || 8080;
 
 app.listen(port, (req, res) => {
   console.log(`\n:::Server running on port ${port}:::\n`);
